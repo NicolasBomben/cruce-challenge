@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    max-width: 200px;
+    gap: 1rem;
+}
+
+.title{
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 18px;
+    letter-spacing: 5%;
+}
+
+.title, .titleRed, .titleDisabled {
+    margin: 0.2rem;
+}
+
+.titleRed, .titleDisabled{
+    font-size: 0.813rem;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 1%;
+}
+
+.titleRed{
+    color: #EC2227;
+}
+.titleDisabled{
+  color: #8C8C8C;
+}
+
+.border{
+    width: 36px;
+    border: 1px solid #C8C8C8;
+    transform: rotate(120deg);
+}
+
+@media(max-width: 425px){
+    
+    .container{
+        display: none;
+    }
+}

@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+/* Parte superior: 2 cards (izq) y Contenido (der) */
+.superior {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Bloque de las primeras dos cards en columna */
+.primerBloque {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Parte inferior: más tarjetas */
+.inferior {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+/* Estética desfasada */
+.up {
+  transform: translateY(-10px);
+}
+
+.down {
+  transform: translateY(20px);
+}
+

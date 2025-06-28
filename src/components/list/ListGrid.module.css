@@ -1,0 +1,21 @@
+
+.listContainer{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+@media(min-width: 1366px){
+
+    .cardContainer{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

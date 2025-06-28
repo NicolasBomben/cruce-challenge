@@ -1,0 +1,28 @@
+.controlContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.control{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 120px;
+    height: 60px;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 120px;
+    background-color: #FDB913;
+    cursor: pointer;
+    border: none;
+}
+
+.text{
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 12px;
+    color: #000000;
+}
+
+.img{
+    padding-top: 0.5rem;
+}

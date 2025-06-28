@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.containerColumnas {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6rem;
+  width: 500px;
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 12px;
+  color: #8c8c8c;
+}
+
+.itemOferta {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 12px;
+  vertical-align: middle;
+  color: #000000;
+}
+
+.input {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.button {
+  width: 80px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #000000;
+  background-color: #FFFFFF;
+  border: 2px solid #000;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.2s ease;
+}

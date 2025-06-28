@@ -1,0 +1,32 @@
+.container{
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.titleContainer{
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.title{
+    font-size: 2.125rem;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.subTitle{
+    font-size: 0.625rem;
+    font-weight: 800;
+    line-height: 12px;
+    color: #8C8C8C;
+    padding-top: 5rem;
+    padding-left: 2rem;
+}
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1.5rem;
+}

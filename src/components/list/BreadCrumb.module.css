@@ -1,0 +1,27 @@
+.breadCrumbContainer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.linkInactive{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 18px;
+    vertical-align: middle;
+    color: #8C8C8C;
+}
+
+.linkActive{
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 18px;
+    vertical-align: middle;
+    color: #000000;
+}
+
+.linkSeparator{
+    color: #8C8C8C;
+}
+

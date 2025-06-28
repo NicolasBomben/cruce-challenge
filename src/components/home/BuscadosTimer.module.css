@@ -1,0 +1,17 @@
+.container{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    display: flex;
+    gap: 4rem;
+}
+
+.title{
+    font-size: 1.688rem;
+    font-weight: 800;
+    line-height: 30px;
+    color: #505050;
+}
+
+.cardContainer{
+    display: flex;
+}

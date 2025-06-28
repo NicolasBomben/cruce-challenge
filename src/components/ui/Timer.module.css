@@ -1,0 +1,20 @@
+.timerContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.timer{
+    font-size: 1.688rem;
+    font-weight: 800;
+    line-height: 30px;
+    color: #EC2227;
+}
+
+.horas{
+    display: flex;
+    gap: 1rem;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 18px;
+    color: #505050;
+}

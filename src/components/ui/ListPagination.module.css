@@ -1,0 +1,53 @@
+.paginationContainer {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0;
+  padding-top: 4rem;
+}
+
+.circleButton {
+  width: 36px;
+  height: 35px;
+  border-radius: 24px;
+  border: 1px solid #f0f0f0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.circleButton:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pageButton {
+  background: none;
+  border: none;
+  color: #8c8c8c;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 18px;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.pageButton:disabled {
+  cursor: default;
+}
+
+.activePage {
+  background: none;
+  border: 2px solid #f26522;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 18px;
+  margin: 0 8px;
+  border-radius: 12px;
+  padding: 2px 18px;
+  cursor: default;
+}

@@ -1,0 +1,31 @@
+
+.cardContainer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.image{
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+
+.infoCard{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.title{
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0;
+    color: #000000;
+}
+
+.price {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #000000;
+}

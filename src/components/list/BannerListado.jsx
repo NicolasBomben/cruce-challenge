@@ -6,7 +6,7 @@ export const BannerListado = () => {
   return (
     <section className={`container ${styles.container}`}>
         <div className={styles.bannerContainer}>
-            <img src={Banner} alt="baner de funcos" />
+            <img src={Banner} alt="baner de funcos" className={styles.imgBanner}/>
         </div>
     </section>
   )

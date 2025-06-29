@@ -10,7 +10,6 @@ export * from './home/BuscadosTimer';
 export * from './list/FilterBar';
 export * from './list/ListGrid.jsx';
 export * from './list/BannerListado.jsx';
-export * from './list/BreadCrumb.jsx';
 export * from './list/ListHeader.jsx';
 export * from './ui/Header';
 export * from './ui/Pagination';

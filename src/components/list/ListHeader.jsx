@@ -1,30 +1,24 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 //componentes
-import { BreadCrumb } from '../../components';
-import { FilterBar } from '../../components';
+import { FilterBar } from "../../components";
 
 //styles
-import styles from './ListHeader.module.css';
+import styles from "./ListHeader.module.css";
 
-
-export const ListHeader = ({ filterBy, setFilterBy, sortBy, setSortBy}) => {
+export const ListHeader = ({ filterBy, setFilterBy, sortBy, setSortBy }) => {
   return (
     <div className={styles.listHeaderContainer}>
-        <div className={styles.breadCrumb}>
-            <BreadCrumb/>
-        </div>
-        <div className={styles.filterBar}>
-            <FilterBar
-                filterBy={filterBy}
-                setFilterBy={setFilterBy}
-                sortBy={sortBy}
-                setSortBy={setSortBy}
-            />
-        </div>
-
+      
+        <FilterBar
+          filterBy={filterBy}
+          setFilterBy={setFilterBy}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+        />
+      
     </div>
-  )
-}
+  );
+};
 
 ListHeader.propTypes = {
   filterBy: PropTypes.any,

@@ -1,8 +1,11 @@
-import styles from "./Pagination.module.css";
 import PropTypes from "prop-types";
 
-import FlechaIzquierda from '../../assets/flecha-izquierda.png';
-import FlechaDerecha from '../../assets/flecha-derecha.png';
+import { ArrowLeft } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+
+import styles from "./Pagination.module.css";
+
+
 
 export const Pagination = ({
   page,
@@ -23,25 +26,27 @@ export const Pagination = ({
 
   return (
     <div className={styles.paginationContainer}>
+
       <div className={styles.buttonsContainer}>
         <button
           onClick={() => handlePageChange(page - 1)}
           disabled={page === 1}
           className={styles.button}
         >
-          <img src={FlechaIzquierda} alt="Anterior" className={styles.icon} />
+          <ArrowLeft alt="Anterior" className={styles.icon} />
         </button>
         <button
           onClick={() => handlePageChange(page + 1)}
           disabled={page === totalPaginas}
           className={styles.button}
         >
-          <img src={FlechaDerecha} alt="Siguiente" className={styles.icon} />
+          <ArrowRight alt="Siguiente" className={styles.icon} />
         </button>
       </div>
+
       <div>
         <span className={styles.pageInfo}>
-          {endItem} de {totalItems} elementos
+          {endItem} de {totalItems}
         </span>
       </div>
     </div>

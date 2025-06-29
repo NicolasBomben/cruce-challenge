@@ -5,6 +5,15 @@ import { ChevronDown } from "lucide-react";
 export const FilterBar = ({ filterBy, setFilterBy, sortBy, setSortBy }) => {
   return (
     <div className={styles.filterBarContainer}>
+      
+      <div className={styles.breadCrumb}>
+        <span className={styles.linkInactive}>Inicio</span>
+        <span className={styles.linkSeparator}>/</span>
+        <span className={styles.linkInactive}>Juguetes</span>
+        <span className={styles.linkSeparator}>/</span>
+        <span className={styles.linkActive}>Funko Pop</span>
+      </div>
+
       <div className={styles.filterDropDown}>
         <span className={styles.filterLabel}>Filtrar</span>
         <ChevronDown className={styles.chevron} width={36} height={36} />

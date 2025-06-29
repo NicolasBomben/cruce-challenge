@@ -1,4 +1,5 @@
 //componentes.
+import { Header } from "../components";
 import { TopBanner } from "../components";
 import { Beneficios } from "../components";
 import { Destacados } from "../components";
@@ -13,6 +14,7 @@ import { Control } from "../components";
 export const Home = () => {
   return (
     <main>
+      <Header/>
       <TopBanner/>
       <Beneficios/>
       <Destacados />

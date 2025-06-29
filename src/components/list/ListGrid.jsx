@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router";
 import { useListado } from "../../hooks/useListado";
 
 //componentes
+import { BannerListado } from "../../components";
 import { ProductCard } from "../../components";
 import { ListPagination } from "../../components";
 import { ListHeader } from "../../components";
@@ -18,10 +19,16 @@ export const ListGrid = () => {
   const filterParam = searchParams.get("filterBy") || "";
   const sortParam = searchParams.get("sortBy") || "";
 
+  //estados para manjear paginacion y filtros.
   const [page, setPage] = useState(pageParam);
   const [filterBy, setFilterBy] = useState(filterParam);
   const [sortBy, setSortBy] = useState(sortParam);
 
+  const { productos, loading, error, totalPages } = useListado({
+    pageNumber: page,
+    filterBy,
+    sortBy,
+  });
   // actualizo los query params cuando cambian los estados
   useEffect(() => {
     const params = {};
@@ -31,16 +38,9 @@ export const ListGrid = () => {
     setSearchParams(params);
   }, [page, filterBy, sortBy, setSearchParams]);
 
-  const { productos, stock, loading, error, totalPages, totalItems } = useListado({
-    pageNumber: page,
-    filterBy,
-    sortBy,
-  });
-
   console.log(productos, filterBy, loading, error);
 
   //funciones para cambiar filtros / orden
-
   const handleFilterChange = (value) => {
     setFilterBy(value);
     setPage(1);
@@ -53,34 +53,46 @@ export const ListGrid = () => {
 
   return (
     <section className={`container ${styles.container}`}>
-    <div className={styles.listContainer}>
-      <ListHeader
-        filterBy={filterBy}
-        setFilterBy={handleFilterChange}
-        sortBy={sortBy}
-        setSortBy={handleSortChange}
-      />
-    </div>
-    {loading && <p>Cargando productos...</p>}
-    {error && <p>Error No hay productos con descuento.</p>}
+      <div className={styles.bannerContainer}>
+        <BannerListado />
+      </div>
 
-    {/* Si el filtro es "sin descuento", no mostrar nada */}
-    {filterBy !== "discountOFF" && (
-      <>
-        {/* Mensaje si no hay productos con descuento */}
-        {!loading && !error && filterBy === "discountON" && productos.length === 0 && (
-          <p>No hay productos con descuento.</p>
+      <div className={styles.listContainer}>
+        <ListHeader
+          filterBy={filterBy}
+          setFilterBy={handleFilterChange}
+          sortBy={sortBy}
+          setSortBy={handleSortChange}
+        />
+      </div>
+
+      {loading && <p>Cargando productos...</p>}
+
+      {/*Manejo de mensaje solo si el filtro  es sin desc* y no hay productos*/}
+      {!loading &&
+        filterBy === "discountOFF" &&
+        Array.isArray(productos) &&
+        productos.length === 0 && (
+          <p className={styles.sinDescuento}>
+            En este momento no tenemos productos sin descuento.
+          </p>
         )}
 
-        <div className={styles.cardContainer}>
-          {productos.map((prod) => (
-            <ProductCard key={prod.title} prod={prod} />
-          ))}
-        </div>
-
-        <ListPagination page={page} setPage={setPage} totalPages={totalPages} />
-      </>
-    )}
-  </section>
+      {/*Muestro la grilla si hay productos*/}
+      {filterBy !== "discountOFF" && (
+        <>
+          <div className={styles.cardContainer}>
+            {productos.map((prod) => (
+              <ProductCard key={prod.title} prod={prod} />
+            ))}
+          </div>
+          <ListPagination
+            page={page}
+            setPage={setPage}
+            totalPages={totalPages}
+          />
+        </>
+      )}
+    </section>
   );
 };

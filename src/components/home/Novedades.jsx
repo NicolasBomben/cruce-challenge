@@ -1,19 +1,21 @@
-import { useState } from "react";
+//customs hooks para manejo de datos y paginacion.
 import { useColection } from "../../hooks/useColection";
+import { usePagination } from "../../hooks/usePagination";
+
+//components
 import { ProductCard } from "../../components";
 import { Pagination } from "../../components";
+
+//styles
 import styles from "./Novedades.module.css";
 
 export const Novedades = () => {
   const { data: productos, loading, error } = useColection(103);
-  const [page, setPage] = useState(1);
+
   const limit = 4;
 
+  const {page, setPage, totalPages, totalItems, currentItems} = usePagination(productos, limit);
   
-  const totalPages = Math.ceil(productos.length / limit);
-  const totalItems = productos.length;
-  const currentItems = productos.slice((page - 1) * limit, page * limit);
-
   if (loading) return <p>Cargando novedades...</p>;
   if (error) return <p>Error al cargar Novedades</p>;
 

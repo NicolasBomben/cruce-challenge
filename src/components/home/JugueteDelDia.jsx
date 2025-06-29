@@ -2,7 +2,6 @@ import { useColection } from "../../hooks/useColection";
 import { ProductCard } from "../../components";
 import styles from "./JugueteDelDia.module.css";
 
-
 export const JugueteDelDia = () => {
   const { data, loading, error } = useColection(101);
 
@@ -13,18 +12,20 @@ export const JugueteDelDia = () => {
 
   return (
     <>
-      <h2 className={styles.titulo}>Juguete del día</h2>
       <section className={`container ${styles.container}`}>
+        <h2 className={styles.title}>Juguete del día</h2>
 
-        <ProductCard prod={producto} />
-      
-        <div className={styles.banner}>
-          <iframe
-            src="https://www.youtube.com/embed/CIW-xPHAXzw"
-            title="Funko Pop Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+        <div className={styles.cardContainer}>
+          <ProductCard prod={producto} />
+
+          <div className={styles.banner}>
+            <iframe
+              src="https://www.youtube.com/embed/CIW-xPHAXzw"
+              title="Funko Pop Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       </section>
     </>

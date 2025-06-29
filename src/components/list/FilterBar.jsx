@@ -7,7 +7,7 @@ export const FilterBar = ({ filterBy, setFilterBy, sortBy, setSortBy }) => {
     <div className={styles.filterBarContainer}>
       <div className={styles.filterDropDown}>
         <span className={styles.filterLabel}>Filtrar</span>
-        <ChevronDown className={styles.chevron} width={36} height={36}/>
+        <ChevronDown className={styles.chevron} width={36} height={36} />
         <select
           className={styles.dropDownSelect}
           id="filter"
@@ -28,8 +28,10 @@ export const FilterBar = ({ filterBy, setFilterBy, sortBy, setSortBy }) => {
           onChange={(e) => setSortBy(e.target.value)}
         >
           <option value="">Ordenar por</option>
-          <option value="priceASC">Nombre ASC</option>
-          <option value="priceDESC">Nombre DESC</option>
+          <option value="nameASC">Nombre (A-Z)</option>
+          <option value="nameDESC">Nombre (Z-A)</option>
+          <option value="priceASC">Precio (menor a mayor)</option>
+          <option value="priceDESC">Precio (mayor a menor)</option>
         </select>
       </div>
     </div>

@@ -4,8 +4,10 @@
   max-width: 320px;
   padding: 1rem;
   position: relative;
-  background-color: #fff;
-  text-align: center;
+}
+
+.imageContainer {
+  position: relative;
 }
 
 .img {
@@ -15,41 +17,65 @@
   margin-bottom: 0.5rem;
 }
 
+.discountTag {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+  font-size: 0.8rem;
+}
+
 .brand {
-  text-align: left;
   font-size: 1rem;
   line-height: 1.125rem;
   color: #7d5a94;
   font-weight: 800;
+  margin: 0;
 }
 
 .title {
-  text-align: left;
   font-size: 1rem;
+  margin: 0;
 }
 
-.brand, .title{
-  margin: 0.5rem;
-}
 
 .cuotas {
-  font-size: 0.85rem;
-  text-align: left;
+  font-size: 0.938rem;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0;
+  padding-top: 1rem;
+}
+
+.valorCuota {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.prices {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.precioTachado {
+  text-decoration: line-through;
+  color: gray;
 }
 
 .precioFinal {
-  text-align: left;
-  font-size: 1.375rem;
-  line-height: 2;
-  font-weight: 700;
-  margin: 0.3rem 0;
+  color: red;
+  font-weight: bold;
 }
 
 .precioOriginal {
   text-align: left;
   font-size: 0.9rem;
-  color: var(--color-gray);
-  text-decoration: line-through;
 }
 
 .descuento {
@@ -71,7 +97,7 @@
   cursor: pointer;
   width: 42px;
   height: 42px;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   display: flex;
 }
 

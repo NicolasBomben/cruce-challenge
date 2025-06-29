@@ -31,11 +31,13 @@ export const ListGrid = () => {
     setSearchParams(params);
   }, [page, filterBy, sortBy, setSearchParams]);
 
-  const { productos, loading, error, totalPages, totalItems } = useListado({
+  const { productos, stock, loading, error, totalPages, totalItems } = useListado({
     pageNumber: page,
     filterBy,
     sortBy,
   });
+
+  console.log(productos, filterBy, loading, error);
 
   //funciones para cambiar filtros / orden
 
@@ -51,24 +53,34 @@ export const ListGrid = () => {
 
   return (
     <section className={`container ${styles.container}`}>
-      <div className={styles.listContainer}>
-        <ListHeader
-          filterBy={filterBy}
-          setFilterBy={handleFilterChange}
-          sortBy={sortBy}
-          setSortBy={handleSortChange}
-        />
-      </div>
-      {loading && <p>Cargando productos...</p>}
-      {error && <p>Error al cargar productos</p>}
+    <div className={styles.listContainer}>
+      <ListHeader
+        filterBy={filterBy}
+        setFilterBy={handleFilterChange}
+        sortBy={sortBy}
+        setSortBy={handleSortChange}
+      />
+    </div>
+    {loading && <p>Cargando productos...</p>}
+    {error && <p>Error No hay productos con descuento.</p>}
 
-      <div className={styles.cardContainer}>
-        {productos.map((prod) => (
-          <ProductCard key={prod.title} prod={prod} />
-        ))}
-      </div>
+    {/* Si el filtro es "sin descuento", no mostrar nada */}
+    {filterBy !== "discountOFF" && (
+      <>
+        {/* Mensaje si no hay productos con descuento */}
+        {!loading && !error && filterBy === "discountON" && productos.length === 0 && (
+          <p>No hay productos con descuento.</p>
+        )}
 
-      <ListPagination page={page} setPage={setPage} totalPages={totalPages} />
-    </section>
+        <div className={styles.cardContainer}>
+          {productos.map((prod) => (
+            <ProductCard key={prod.title} prod={prod} />
+          ))}
+        </div>
+
+        <ListPagination page={page} setPage={setPage} totalPages={totalPages} />
+      </>
+    )}
+  </section>
   );
 };

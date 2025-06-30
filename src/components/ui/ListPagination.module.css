@@ -51,3 +51,30 @@
   padding: 2px 18px;
   cursor: default;
 }
+
+@media (max-width: 425px) {
+  .paginationContainer {
+    gap: 8px;
+    margin: 16px 0;
+    padding-top: 1.5rem;
+  }
+
+  .circleButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    font-size: 1rem;
+  }
+
+  .pageButton,
+  .activePage {
+    font-size: 0.95rem;
+    margin: 0 4px;
+    padding: 2px 10px;
+  }
+
+  .activePage {
+    border-radius: 8px;
+    padding: 2px 10px;
+  }
+}

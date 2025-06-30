@@ -1,16 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { useColection } from "../../hooks/useColection";
 import { usePagination } from "../../hooks/usePagination";
-import { ProductCard, Pagination } from "../../components";
-import styles from "./ProductsSelection.module.css";
+import { ProductCard, Pagination } from "..";
+import styles from "./ProductsGridSection.module.css";
 import PropTypes from "prop-types";
 
-export const ProductosGridSection = ({
-  title,
-  subTitle,
-  colectionId
-}) => {
+export const ProductsGridSection = ({ title, subTitle, colectionId }) => {
+
+
   const { data: productos, loading, error } = useColection(colectionId);
+  
   const [limit, setLimit] = useState(window.innerWidth <= 425 ? 2 : 4);
 
   useEffect(() => {
@@ -51,8 +50,9 @@ export const ProductosGridSection = ({
   );
 };
 
-ProductosGridSection.propTypes = {
+ProductsGridSection.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string,
-  colectionId: PropTypes.string.isRequired,
+  colectionId: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
 };

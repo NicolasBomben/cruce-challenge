@@ -29,6 +29,7 @@ export const ListGrid = () => {
     filterBy,
     sortBy,
   });
+
   // actualizo los query params cuando cambian los estados
   useEffect(() => {
     const params = {};
@@ -51,6 +52,12 @@ export const ListGrid = () => {
     setPage(1);
   };
 
+  //filtro para sin descuento
+  const productosFiltrados =
+    filterBy === "discountOFF"
+      ? productos.filter((prod) => !prod.discount || prod.discount === 0)
+      : productos;
+
   return (
     <section className={`container ${styles.container}`}>
       <div className={styles.bannerContainer}>
@@ -68,21 +75,22 @@ export const ListGrid = () => {
 
       {loading && <p>Cargando productos...</p>}
 
-      {/*Manejo de mensaje solo si el filtro  es sin desc* y no hay productos*/}
+      {/* Mostrar mensaje si no hay productos filtrados */}
       {!loading &&
-        filterBy === "discountOFF" &&
-        Array.isArray(productos) &&
-        productos.length === 0 && (
+        Array.isArray(productosFiltrados) &&
+        productosFiltrados.length === 0 && (
           <p className={styles.sinDescuento}>
-            En este momento no tenemos productos sin descuento.
+            {filterBy === "discountOFF"
+              ? "En este momento no tenemos productos sin descuento."
+              : "No se encontraron productos para este filtro."}
           </p>
         )}
 
-      {/*Muestro la grilla si hay productos*/}
-      {filterBy !== "discountOFF" && (
+      {/* Mostrar la grilla y paginación solo si hay productos filtrados */}
+      {!loading && productosFiltrados.length > 0 && (
         <>
           <div className={styles.cardContainer}>
-            {productos.map((prod) => (
+            {productosFiltrados.map((prod) => (
               <ProductCard key={prod.title} prod={prod} />
             ))}
           </div>

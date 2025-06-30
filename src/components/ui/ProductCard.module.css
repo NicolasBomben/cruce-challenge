@@ -43,17 +43,20 @@
 
 
 .cuotas {
-  font-size: 0.938rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 18px;
   margin: 0;
   padding-top: 1rem;
+  color: #505050;
 }
+
+
 
 .valorCuota {
   font-weight: bold;
   font-size: 1.1rem;
-  margin: 0;
+  margin-top: 0;  
 }
 
 .prices {

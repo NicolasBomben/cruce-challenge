@@ -1,7 +1,7 @@
 //componentes.
 import { Header } from "../components";
 import { NuestrasMarcas } from "../components";
-import { ProductosGridSection } from "../components";
+import { ProductsGridSection } from "../components";
 import { TopBanner } from "../components";
 import { Beneficios } from "../components";
 import { Destacados } from "../components";
@@ -21,14 +21,14 @@ export const Home = () => {
       <NuestrasMarcas />
       <JugueteDelDia />
       <LoMasBuscado />
-      <ProductosGridSection
+      <ProductsGridSection
         title="Novedades"
         subTitle="VER TODO"
         colectionId={103}
       />
       <Campaña />
       <BuscadosTimer />
-      <ProductosGridSection
+      <ProductsGridSection
         title="Te recomendamos"
         subTitle="VER TODO"
         colectionId={104}

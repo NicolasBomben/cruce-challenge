@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import styles from "./ListPagination.module.css";
 
 export const ListPagination = ({ page, setPage, totalPages }) => {
+  
   const getPages = () => {
     //cantidad de paginas a mostrar en la paginacion.
     const paginasVisibles = 5;

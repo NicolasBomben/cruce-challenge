@@ -2,7 +2,7 @@ export * from './layout/Layout.jsx';
 export * from './home/Contenido';
 export * from './home/NuestrasMarcas.jsx'
 export * from './home/Destacados';
-export * from './home/ProductsSelection.jsx';
+export * from './home/ProductsGridSection.jsx';
 export * from './home/JugueteDelDia';
 export * from './home/LoMasBuscado';
 export * from './home/Campaña';

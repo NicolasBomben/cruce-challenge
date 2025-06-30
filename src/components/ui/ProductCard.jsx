@@ -1,6 +1,8 @@
-import styles from "./ProductCard.module.css";
-import Carrito from "../../assets/carrito.png";
 import PropTypes from "prop-types";
+
+//styles , iconos.
+import styles from "./ProductCard.module.css";
+import { ShoppingCart } from "lucide-react";
 
 export const ProductCard = ({ prod, variant }) => {
   const { image, title, brand, price, discount, stock } = prod;
@@ -36,7 +38,7 @@ export const ProductCard = ({ prod, variant }) => {
       </div>
       {stock > 0 && price ? (
         <button className={styles.button}>
-          <img src={Carrito} alt="Carrito" className={styles.cartIcon} />
+          <ShoppingCart alt="Carrito" className={styles.cartIcon} />
         </button>
       ) : (
         <span>Sin Stock</span>

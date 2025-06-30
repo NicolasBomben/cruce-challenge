@@ -10,6 +10,10 @@
   font-weight: 800;
 }
 
+.titleMobile{
+  display: none;
+}
+
 .subtitle {
   font-size: 1.3rem;
   font-weight: 700;
@@ -38,4 +42,32 @@
   transition: all 0.2s ease;
 }
 
+@media (max-width: 425px) {
 
+
+  .container{
+    width: 100%;
+  }
+
+
+  .title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .titleMobile {
+    display: block;
+  }
+  .titleDesktop {
+    display: none;
+  }
+
+  .subtitle{
+    display: none;
+  }
+
+  .button {
+    display: none;
+  }
+}

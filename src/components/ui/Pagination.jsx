@@ -1,11 +1,9 @@
 import PropTypes from "prop-types";
 
-import { ArrowLeft } from 'lucide-react';
-import { ArrowRight } from 'lucide-react';
-
+//styles, iconos.
 import styles from "./Pagination.module.css";
-
-
+import { ArrowLeft } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const Pagination = ({
   page,
@@ -26,7 +24,6 @@ export const Pagination = ({
 
   return (
     <div className={styles.paginationContainer}>
-
       <div className={styles.buttonsContainer}>
         <button
           onClick={() => handlePageChange(page - 1)}

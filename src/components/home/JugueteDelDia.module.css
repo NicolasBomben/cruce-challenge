@@ -27,8 +27,15 @@
   .title {
     font-size: 2.688rem;
     text-align: center;
+    max-width: 95vw;
   }
 
+  .banner{
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
   .cardContainer {
     flex-direction: column;
     justify-content: center;

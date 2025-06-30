@@ -1,30 +1,39 @@
 //componentes.
 import { Header } from "../components";
+import { NuestrasMarcas } from "../components";
+import { ProductosGridSection } from "../components";
 import { TopBanner } from "../components";
 import { Beneficios } from "../components";
 import { Destacados } from "../components";
 import { JugueteDelDia } from "../components";
 import { LoMasBuscado } from "../components";
-import { Novedades } from "../components";
 import { Campaña } from "../components";
 import { BuscadosTimer } from "../components";
-import { Recomendados } from "../components";
 import { Control } from "../components";
 
 export const Home = () => {
   return (
-    <main>
-      <Header/>
-      <TopBanner/>
-      <Beneficios/>
+    <>
+      <Header />
+      <TopBanner />
+      <Beneficios />
       <Destacados />
+      <NuestrasMarcas />
       <JugueteDelDia />
       <LoMasBuscado />
-      <Novedades />
-      <Campaña/>
-      <BuscadosTimer/>
-      <Recomendados />
-      <Control/>
-    </main>
+      <ProductosGridSection
+        title="Novedades"
+        subTitle="VER TODO"
+        colectionId={103}
+      />
+      <Campaña />
+      <BuscadosTimer />
+      <ProductosGridSection
+        title="Te recomendamos"
+        subTitle="VER TODO"
+        colectionId={104}
+      />
+      <Control />
+    </>
   );
 };

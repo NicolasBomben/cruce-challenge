@@ -1,20 +1,52 @@
-.container{
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-    display: flex;
-    gap: 4rem;
+.container {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  display: flex;
+  gap: 4rem;
 }
 
-.title{
-    font-size: 1.688rem;
-    font-weight: 800;
+.title {
+  font-size: 1.688rem;
+  font-weight: 800;
+  line-height: 30px;
+  color: #76b043;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (max-width: 425px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+        "title card2"
+        "card1 card3"
+        "cadr4 card5";
+    gap: 1.5rem;
+    align-items: start;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    
+  }
+  .title {
+    grid-area: title;
+    font-size: 1.6rem;
     line-height: 30px;
-    color: #76B043;
+    text-align: left;
+    margin: 0;
+    padding-left: 0.5rem;
+    min-width: 120px;
+    align-self: start;
+  }
+
+  .cardContainer {
+    display: contents;
+  }
+
 }
-
-.cardContainer{
-    display: flex;
-}
-
-
-

@@ -8,7 +8,7 @@ export const BuscadosCard = ({ title, image, price }) => {
         <img src={image} alt={title} className={styles.image} />
         <div className={styles.infoCard}>
           <p className={styles.title}>{title}</p>
-          <p className={styles.price}>{price}</p>
+          <span className={styles.price}>${price}</span>
         </div>
       </div>
     </>

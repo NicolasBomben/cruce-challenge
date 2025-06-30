@@ -18,3 +18,10 @@
     line-height: 18px;
     color: #505050;
 }
+
+@media(max-width: 425px){
+    .timerContainer{
+        align-items: flex-start;
+        margin-left: 0.5rem;
+    }
+}

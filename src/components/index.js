@@ -1,10 +1,10 @@
 export * from './layout/Layout.jsx';
 export * from './home/Contenido';
+export * from './home/NuestrasMarcas.jsx'
 export * from './home/Destacados';
+export * from './home/ProductsSelection.jsx';
 export * from './home/JugueteDelDia';
 export * from './home/LoMasBuscado';
-export * from './home/Novedades';
-export * from './home/Recomendados';
 export * from './home/Campaña';
 export * from './home/BuscadosTimer';
 export * from './list/FilterBar';
@@ -20,3 +20,4 @@ export * from './ui/Footer.jsx';
 export * from './ui/TopBanner.jsx';
 export * from './ui/Beneficios.jsx';
 export * from './ui/ListPagination.jsx';
+

@@ -7,8 +7,6 @@ import styles from "./Destacados.module.css";
 export const Destacados = () => {
   const { data: productos, loading, error } = useColection(100);
 
-  console.log(productos);
-
   // Validación para mostrar mensaje de carga o error
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>Error al cargar los productos</p>;
@@ -48,6 +46,7 @@ export const Destacados = () => {
           </div>
         ))}
       </div>
+      <button className={styles.button}>Ver colección</button>
     </section>
   );
 };

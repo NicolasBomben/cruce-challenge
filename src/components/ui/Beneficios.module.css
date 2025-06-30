@@ -46,6 +46,10 @@
     transform: rotate(120deg);
 }
 
+.icon{
+    color: #76B043;
+}
+
 @media(max-width: 425px){
     
     .container{

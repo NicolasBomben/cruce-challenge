@@ -2,7 +2,7 @@ import styles from "./ProductCard.module.css";
 import Carrito from "../../assets/carrito.png";
 import PropTypes from "prop-types";
 
-export const ProductCard = ({ prod }) => {
+export const ProductCard = ({ prod, variant }) => {
   const { image, title, brand, price, discount, stock } = prod;
 
   // Calcular precio original si hay descuento
@@ -10,43 +10,37 @@ export const ProductCard = ({ prod }) => {
     discount > 0 ? (price / (1 - discount / 100)).toFixed(2) : null;
 
   return (
-     <div className={styles.card}>
+    <div className={`${styles.card} ${variant === "jugueteDelDia" ? styles.jugueteDelDia : ""}`}>
       <div className={styles.imageContainer}>
         <img src={image} alt={title} className={styles.img} />
-        {discount > 0 && (
-          <span className={styles.discountTag}>-{discount}%</span>
-        )}
       </div>
-      
-      <div>
-      <p className={styles.brand}>{brand}</p>
-      <p className={styles.title}>{title}</p>
 
-      <p className={styles.cuotas}>6 Cuotas s/interés de</p>
-      <p className={styles.valorCuota}>$211,50</p>
+      <div className={styles.cardBody}>
+        <p className={styles.brand}>{brand}</p>
+        <p className={styles.title}>{title}</p>
 
-      <div className={styles.prices}>
-        {discount > 0 && listPrice ? (
-          <>
-            <span>Final: </span>
-            <span className={styles.precioTachado}>${listPrice}</span>
+        <p className={styles.cuotas}>6 Cuotas s/interés de</p>
+        <p className={styles.valorCuota}>$211,50</p>
+
+        <div className={styles.prices}>
+          {discount > 0 && listPrice ? (
+            <>
+              <span>Final: </span>
+              <span className={styles.precioTachado}>${listPrice}</span>
+              <span className={styles.precioFinal}>${price}</span>
+            </>
+          ) : (
             <span className={styles.precioFinal}>${price}</span>
-          </>
-        ) : (
-          <span className={styles.precioFinal}>${price}</span>
-        )}
-      </div>
-
+          )}
+        </div>
       </div>
       {stock > 0 && price ? (
-      <button className={styles.button}>
-        <img src={Carrito} alt="Carrito" className={styles.cartIcon} />
-      </button>
-
+        <button className={styles.button}>
+          <img src={Carrito} alt="Carrito" className={styles.cartIcon} />
+        </button>
       ) : (
         <span>Sin Stock</span>
-      )
-    }
+      )}
     </div>
   );
 };
@@ -68,4 +62,5 @@ ProductCard.propTypes = {
       })
     ).isRequired,
   }).isRequired,
+  variant: PropTypes.string,
 };

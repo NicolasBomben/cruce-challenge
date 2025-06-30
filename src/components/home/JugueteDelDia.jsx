@@ -16,7 +16,7 @@ export const JugueteDelDia = () => {
         <h2 className={styles.title}>Juguete del día</h2>
 
         <div className={styles.cardContainer}>
-          <ProductCard prod={producto} />
+          <ProductCard prod={producto} variant="jugueteDelDia"/>
 
           <div className={styles.banner}>
             <iframe

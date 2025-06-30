@@ -1,13 +1,14 @@
 import styles from "./Beneficios.module.css";
-import CuotasIcon from "../../assets/credito.png";
-import EnvioIcon from "../../assets/envio.png";
-import ExpressIcon from "../../assets/moto.png";
+import { CreditCard } from "lucide-react";
+import { Truck } from "lucide-react";
+import { TruckElectric } from "lucide-react"; 
+
 
 export const Beneficios = () => {
   return (
     <section className={`container ${styles.container}`}>
       <div className={styles.item}>
-        <img src={CuotasIcon} alt="12 y 18 Cuotas" className={styles.icon} />
+        <CreditCard alt="12 y 18 Cuotas" className={styles.icon} />
         <div>
           <p className={styles.title}>12 y 18 Cuotas</p>
           <p className={styles.titleRed}>¡Sin interés!</p>
@@ -17,7 +18,7 @@ export const Beneficios = () => {
       <span className={styles.border}></span>
       
       <div className={styles.item}>
-        <img src={EnvioIcon} alt="Envío gratis" className={styles.icono} />
+        <Truck alt="Envío gratis" className={styles.icon} />
         <div>
           <p className={styles.title}>Envío gratis</p>
           <p className={styles.titleRed}>En todas las compras</p>
@@ -27,10 +28,9 @@ export const Beneficios = () => {
       <span className={styles.border}></span>
 
       <div className={styles.item}>
-        <img
-          src={ExpressIcon}
+        <TruckElectric
           alt="Te llega en 24hs"
-          className={styles.icono}
+          className={styles.icon}
         />
         <div>
           <p className={styles.title}>Te llega en 24hs</p>

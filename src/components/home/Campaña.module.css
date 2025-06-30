@@ -21,3 +21,46 @@
   max-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
+
+@media (max-width: 425px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .bannerContainer {
+    width: 100%;
+    height: auto;
+    min-height: 220px;
+    margin-bottom: 1rem;
+  }
+
+  .bgImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .overlayImg {
+    position: absolute;
+    left: 55%;
+    top: 40%;
+  }
+
+  .cardPaginationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 340px;
+    padding: 1rem 0.5rem 0 0.5rem;
+    margin: -5rem auto 0 auto;
+    box-sizing: border-box;
+    gap: 1rem;
+    z-index: 2;
+    position: relative;
+    background: none;
+  }
+}

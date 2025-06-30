@@ -3,12 +3,13 @@
     justify-content: center;
 }
 
-.control{
+.button{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    width: 120px;
-    height: 60px;
+    width: 140px;
+    height: 80px;
     border-top-left-radius: 120px;
     border-top-right-radius: 120px;
     background-color: #FDB913;
@@ -23,6 +24,3 @@
     color: #000000;
 }
 
-.img{
-    padding-top: 0.5rem;
-}

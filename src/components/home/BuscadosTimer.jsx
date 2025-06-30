@@ -12,6 +12,7 @@ export const BuscadosTimer = () => {
   }
   return (
     <section className={`container ${styles.container}`}>
+      
       <div>
         <h3 className={styles.title}>Termina en:</h3>
         <Timer />

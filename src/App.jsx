@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 //layout
-import { Layout } from "./components";
+import { Layout }  from "./layout/Layout";
 //pages
 import { Home, Listado } from "./pages";
 

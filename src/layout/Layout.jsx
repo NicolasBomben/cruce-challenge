@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 
 
-import { Footer } from "../../components";
+import { Footer } from "../components";
 
 export const Layout = () => {
   return (
@@ -13,3 +13,5 @@ export const Layout = () => {
     </>
   );
 };
+
+

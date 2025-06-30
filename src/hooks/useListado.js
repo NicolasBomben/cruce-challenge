@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getListado } from "../services/api";
 
 export const useListado = ({ pageNumber, sortBy, filterBy }) => {
+  
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,7 +15,7 @@ export const useListado = ({ pageNumber, sortBy, filterBy }) => {
       try {
         const res = await getListado({ pageNumber, sortBy, filterBy });
         const data = res.data.items || [];
-        console.log(res.data)
+        
         const paginas = res.data.metadata?.maxPage || 1;
 
         setProductos(data);

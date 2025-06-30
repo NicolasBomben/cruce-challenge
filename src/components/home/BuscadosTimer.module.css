@@ -1,8 +1,7 @@
 .container{
-    padding-top: 6rem;
-    padding-bottom: 6rem;
     display: flex;
     gap: 4rem;
+    padding-bottom: 2rem;
 }
 
 .title{

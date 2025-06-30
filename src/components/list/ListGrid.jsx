@@ -24,7 +24,7 @@ export const ListGrid = () => {
   const [filterBy, setFilterBy] = useState(filterParam);
   const [sortBy, setSortBy] = useState(sortParam);
 
-  const { productos, loading, error, totalPages } = useListado({
+  const { productos, loading, totalPages } = useListado({
     pageNumber: page,
     filterBy,
     sortBy,
@@ -39,7 +39,6 @@ export const ListGrid = () => {
     setSearchParams(params);
   }, [page, filterBy, sortBy, setSearchParams]);
 
-  console.log(productos, filterBy, loading, error);
 
   //funciones para cambiar filtros / orden
   const handleFilterChange = (value) => {
